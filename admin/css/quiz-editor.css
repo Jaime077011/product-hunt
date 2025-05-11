@@ -1,0 +1,383 @@
+/**
+ * Styles for the Product Hunt Quiz Editor
+ */
+
+/* Question container */
+.product-hunt-question-container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.product-hunt-question-handle {
+    background-color: #f7f7f7;
+    padding: 12px 15px;
+    border-radius: 4px 4px 0 0;
+    cursor: move;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+}
+
+.product-hunt-question-handle .dashicons {
+    color: #aaa;
+    margin-right: 10px;
+}
+
+.product-hunt-question-content {
+    padding: 15px;
+}
+
+.product-hunt-question-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.product-hunt-question-row {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 20px;
+}
+
+.product-hunt-question-col {
+    flex: 1;
+}
+
+.question-title {
+    font-weight: 500;
+    flex-grow: 1;
+}
+
+/* Answer container */
+.product-hunt-answers-list {
+    min-height: 10px;
+}
+
+.product-hunt-answer-container {
+    background-color: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.product-hunt-answer-row {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+}
+
+.product-hunt-answer-handle {
+    cursor: move;
+    color: #aaa;
+    margin-right: 10px;
+}
+
+.product-hunt-answer-content {
+    flex-grow: 1;
+}
+
+.product-hunt-answer-actions {
+    display: flex;
+    gap: 5px;
+}
+
+/* Product search and mapping */
+.product-hunt-product-mapping {
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-top: 1px dashed #ddd;
+}
+
+.product-hunt-product-search {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.product-search-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.product-search-results {
+    position: absolute;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 9999;
+}
+
+.product-search-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.product-search-list li {
+    margin: 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.product-search-list li:last-child {
+    border-bottom: none;
+}
+
+.product-search-list a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 8px;
+    transition: background 0.2s ease;
+}
+
+.product-search-list a:hover, 
+.product-search-list a:focus {
+    background-color: #f7f7f7;
+    outline: none;
+}
+
+.product-search-item {
+    display: flex;
+    align-items: center;
+}
+
+.product-thumb {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border: 1px solid #eee;
+    margin-right: 10px;
+}
+
+.product-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-title {
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+
+.product-price {
+    font-size: 12px;
+    color: #666;
+}
+
+.product-hunt-loading {
+    padding: 15px;
+    text-align: center;
+    color: #666;
+}
+
+.search-error {
+    padding: 10px;
+    color: #d63638;
+    margin: 0;
+}
+
+.no-products {
+    padding: 15px;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+/* Selected products */
+.selected-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.product-hunt-product-item {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    background: #fff;
+    display: flex;
+    align-items: flex-start;
+    transition: box-shadow 0.2s ease;
+}
+
+.product-hunt-product-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.product-hunt-product-item .product-image {
+    width: 60px;
+    height: 60px;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.product-hunt-product-item .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid #eee;
+}
+
+.product-hunt-product-item .product-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+    word-break: break-word;
+}
+
+.product-hunt-product-item .product-price {
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.product-hunt-product-item .remove-product {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: transparent;
+    border: none;
+    color: #cc0000;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+    padding: 0;
+}
+
+.product-hunt-product-item .remove-product:hover {
+    opacity: 1;
+}
+
+.product-weight {
+    margin-top: 5px;
+}
+
+.product-weight label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: #666;
+}
+
+.product-weight-select {
+    width: 100%;
+    max-width: 120px;
+}
+
+/* Conditional logic */
+.product-hunt-conditional-logic {
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-top: 1px dashed #ddd;
+    margin-bottom: 15px;
+}
+
+.product-hunt-conditional-logic-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.product-hunt-logic-rule {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.logic-rule-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.delete-logic-rule {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: #d63638;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Hide logic button and conditional logic sections */
+.toggle-conditional-logic,
+.product-hunt-conditional-logic,
+.logic-related-elements {
+    display: none !important;
+}
+
+/* Button styles */
+.add-new-question {
+    margin: 20px 0;
+}
+
+.add-new-answer {
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Sortable placeholders */
+.product-hunt-question-placeholder {
+    border: 2px dashed #bbb;
+    background-color: #f7f7f7;
+    height: 60px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.product-hunt-answer-placeholder {
+    border: 2px dashed #ccc;
+    background-color: #fafafa;
+    height: 40px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 782px) {
+    .product-hunt-question-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .logic-rule-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .logic-rule-content select {
+        width: 100%;
+    }
+    
+    .product-hunt-product-item {
+        flex-direction: column;
+    }
+    
+    .product-image {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100%;
+        height: auto;
+    }
+}

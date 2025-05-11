@@ -1,0 +1,143 @@
+/**
+ * Styles for the Product Hunt Quiz Settings page
+ */
+
+/* Settings layout */
+.product-hunt-settings-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.product-hunt-settings-sidebar {
+    flex: 0 0 200px;
+}
+
+.product-hunt-settings-content {
+    flex: 1;
+    max-width: 800px;
+}
+
+/* Settings navigation */
+.product-hunt-settings-nav {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+}
+
+.product-hunt-settings-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.product-hunt-settings-nav a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    color: #646970;
+    transition: all 0.2s ease;
+}
+
+.product-hunt-settings-nav a.active,
+.product-hunt-settings-nav a:hover {
+    background-color: #f6f7f7;
+    border-left-color: #2271b1;
+    color: #2271b1;
+}
+
+/* Settings sections */
+.settings-section {
+    display: none;
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.settings-section.active {
+    display: block;
+}
+
+.settings-section h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Form elements */
+.form-table th {
+    width: 200px;
+    vertical-align: top;
+}
+
+.form-table .description {
+    color: #646970;
+    font-style: italic;
+    margin-top: 4px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Mailchimp test connection */
+.test-success {
+    color: #46b450;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.test-error {
+    color: #dc3232;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.test-loading {
+    color: #646970;
+    font-style: italic;
+    margin-left: 10px;
+}
+
+/* Settings footer */
+.product-hunt-settings-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #dcdcde;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 782px) {
+    .product-hunt-settings-container {
+        flex-direction: column;
+    }
+
+    .product-hunt-settings-sidebar {
+        flex: auto;
+        width: 100%;
+    }
+    
+    .product-hunt-settings-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .product-hunt-settings-nav li {
+        flex: 1 1 auto;
+    }
+    
+    .product-hunt-settings-nav a {
+        text-align: center;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+    }
+    
+    .product-hunt-settings-nav a.active,
+    .product-hunt-settings-nav a:hover {
+        border-left-color: transparent;
+        border-bottom-color: #2271b1;
+    }
+}

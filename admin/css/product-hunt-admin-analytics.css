@@ -1,0 +1,183 @@
+/**
+ * Styles for the Product Hunt Quiz Analytics page
+ */
+
+/* Analytics Filters */
+.product-hunt-analytics-filters {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.filter-group {
+    margin-bottom: 10px;
+}
+
+.filter-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.filter-group select, 
+.filter-group input[type="date"] {
+    min-width: 150px;
+}
+
+.custom-date-inputs {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+/* Summary Stats Cards */
+.product-hunt-summary-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card-inner {
+    display: flex;
+    align-items: center;
+}
+
+.stat-card-inner .dashicons {
+    font-size: 36px;
+    width: 36px;
+    height: 36px;
+    color: #2271b1;
+    margin-right: 15px;
+}
+
+.stat-card-content h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #2271b1;
+}
+
+.stat-card-content p {
+    margin: 5px 0 0;
+    color: #646970;
+    font-size: 14px;
+}
+
+/* Analytics Grid */
+.product-hunt-analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.analytics-card {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    padding: 20px;
+}
+
+.analytics-card-full {
+    grid-column: 1 / -1;
+}
+
+.analytics-card h2 {
+    margin-top: 0;
+    font-size: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+    color: #1d2327;
+}
+
+/* Chart container */
+.analytics-chart-container {
+    height: 350px;
+    position: relative;
+}
+
+.analytics-chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Analytics Tables */
+.analytics-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.analytics-table thead th {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.analytics-table tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.analytics-table tbody tr:hover {
+    background-color: #f6f7f7;
+}
+
+/* No data message */
+.no-data {
+    color: #646970;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Export Button */
+.export-analytics {
+    margin-left: auto;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 782px) {
+    .product-hunt-analytics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .custom-date-inputs {
+        flex-direction: column;
+    }
+    
+    .analytics-chart-container {
+        height: 300px;
+    }
+}
